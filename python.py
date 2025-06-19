@@ -3,4 +3,5 @@ def some_functon(x: str, y: int):
     print(my_var)
     print("a")
 
+
 some_functon("10", 10)

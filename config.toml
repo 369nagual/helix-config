@@ -58,6 +58,10 @@ a = "code_action" # Maps `ga` to show possible code actions
 "C-q"= ":q"
 "C-r" = ":config-reload"
 "C-o" = ":config-open"
+"A-1" = ":run-shell-command git status"
+"A-2" = ":run-shell-command git log"
+"C-1" = ":run-shell-command git add -u"
+"C-2" = ":run-shell-command git commit --allow-empty-message --no-edit"
 
 [editor.file-picker]
 # file picker is handy
