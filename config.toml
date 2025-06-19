@@ -1,6 +1,6 @@
 #  Optional Theme
-theme = "solarized_dark"
-# theme = "onedark"
+# theme = "solarized_dark"
+theme = "onedark"
 
 
 [editor]
@@ -39,8 +39,8 @@ display-progress-messages = true
 focus-lost = true
 after-delay.enable = true
 
- [editor.inline-diagnostics]
- cursor-line = "info"
+[editor.inline-diagnostics]
+cursor-line = "info"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -67,7 +67,7 @@ d = "extend_line"
 "A-2" = ":run-shell-command git log"
 "C-1" = ":run-shell-command git add -u"
 "C-2" = ":run-shell-command git commit --allow-empty-message --no-edit"
-"C-e" = ":sh start y"
+# "C-e" = ":sc"
 # "C-<space>" = ":run-shell-command hx --health python"
 [editor.file-picker]
 # file picker is handy
