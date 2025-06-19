@@ -1,0 +1,66 @@
+#  Optional Theme
+theme = "solarized_dark"
+# theme = "onedark"
+[editor]
+line-number = "absolute"
+mouse = true
+bufferline = "multiple"
+true-color =  true
+auto-completion = false
+auto-pairs = true
+auto-format = true
+completion-trigger-len = 1  # Start showing completions after 1 character
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+enable = true
+display-messages = true
+auto-signature-help = false
+display-inlay-hints = true
+display-signature-help-docs = true
+snippets = true
+goto-reference-include-declaration = true
+display-progress-messages = true
+
+
+
+
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
+
+ [editor.inline-diagnostics]
+ cursor-line = "info"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+[keys.normal.g]
+a = "code_action" # Maps `ga` to show possible code actions
+
+[keys.normal]
+"C-s" = ":w"
+"C-q"= ":q"
+"C-r" = ":config-reload"
+"C-o" = ":config-open"
+
+[editor.file-picker]
+# file picker is handy
+hidden = false
+ 
+
