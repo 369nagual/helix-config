@@ -8,7 +8,7 @@ line-number = "absolute"
 mouse = true
 bufferline = "multiple"
 true-color =  true
-auto-completion = false
+auto-completion = true
 auto-pairs = true
 auto-format = true
 completion-trigger-len = 1  # Start showing completions after 1 character
@@ -58,17 +58,15 @@ a = "code_action" # Maps `ga` to show possible code actions
 [keys.normal]
 "C-s" = ":w"
 "C-q" = ":q"
-x = "delete_selection"
-d = "extend_line"
-# d = "extend_to_first_nonwhitespace"
+# x = "delete_selection"
+# d = "extend_line"
 "C-r" = ":config-reload"
 "C-o" = ":config-open"
 "A-1" = ":run-shell-command git status"
 "A-2" = ":run-shell-command git log"
 "C-1" = ":run-shell-command git add -u"
 "C-2" = ":run-shell-command git commit --allow-empty-message --no-edit"
-# "C-e" = ":sc"
-# "C-<space>" = ":run-shell-command hx --health python"
+
 [editor.file-picker]
 # file picker is handy
 hidden = false
