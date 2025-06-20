@@ -5,6 +5,6 @@ def print_hello_world(name: str, age: int):
 
 name = input("Enter your name: ")
 age = input("Enter you age: ")
-
+print()
 
 print_hello_world(name, age)
