@@ -1,6 +1,6 @@
 #  Optional Theme
-# theme = "solarized_dark"
-theme = "onedark"
+theme = "solarized_dark"
+# theme = "onedark"
 
 
 [editor]
@@ -56,12 +56,9 @@ render = true
 a = "code_action" # Maps `ga` to show possible code actions
 
 [keys.normal]
-"C-s" = ":w"
-"C-q" = ":q"
-# x = "delete_selection"
-# d = "extend_line"
+"A-s" = ":w"
+"A-q" = ":q"
 "C-r" = ":config-reload"
-"C-o" = ":config-open"
 "A-1" = ":run-shell-command git status"
 "A-2" = ":run-shell-command git log"
 "C-1" = ":run-shell-command git add -u"
