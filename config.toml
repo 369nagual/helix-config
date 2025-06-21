@@ -5,7 +5,7 @@ theme = "solarized_dark"
 
 [editor]
 line-number = "absolute"
-mouse = true
+mouse = false
 bufferline = "multiple"
 true-color =  true
 auto-completion = true
@@ -33,10 +33,8 @@ goto-reference-include-declaration = true
 display-progress-messages = true
 
 
-
-
 [editor.auto-save]
-focыus-lost = true
+focus-lost = true
 after-delay.enable = true
 
 [editor.inline-diagnostics]
@@ -59,11 +57,13 @@ a = "code_action" # Maps `ga` to show possible code actions
 "A-s" = ":w"
 "A-q" = ":q"
 "C-r" = ":config-reload"
-"A-1" = ":run-shell-command git status"
-"A-2" = ":run-shell-command git log"
-"C-1" = ":run-shell-command git add -u"
-"C-2" = ":run-shell-command git commit --allow-empty-message --no-edit"
+"A-1" = ":sh git status"
+"A-2" = ":sh git log"
+"C-1" = ":sh git add -u"
+"C-2" = ":sh git commit --allow-empty-message --no-edit"
 
+"C-9" = ":sh git restore --staged ."
+"C-0" = ":sh git restore ."
 [editor.file-picker]
 # file picker is handy
 hidden = false
