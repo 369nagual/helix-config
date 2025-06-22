@@ -1,6 +1,6 @@
 #  Optional Theme
-theme = "solarized_dark"
-# theme = "onedark"
+# theme = "solarized_dark"
+theme = "onedark"
 
 
 [editor]
@@ -35,7 +35,7 @@ display-progress-messages = true
 
 [editor.auto-save]
 focus-lost = true
-after-delay.enable = true
+# after-delay.enable = true
 
 [editor.inline-diagnostics]
 cursor-line = "info"
@@ -64,6 +64,8 @@ a = "code_action" # Maps `ga` to show possible code actions
 
 "C-9" = ":sh git restore --staged ."
 "C-0" = ":sh git restore ."
+"C-i" = ":sh type hello.php"
+
 [editor.file-picker]
 # file picker is handy
 hidden = false
