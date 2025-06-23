@@ -68,6 +68,10 @@ a = "code_action" # Maps `ga` to show possible code actions
 "C-minus" = ":sh git stash"
 "C-=" = ":sh git stash pop"
 "C-S-i" = ":sh type hello.php"
+"A-p" = ":sh py %{buffer_name}"
+
+[keys.normal.space.space]
+b = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
 
 [editor.file-picker]
 # file picker is handy
