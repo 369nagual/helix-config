@@ -61,10 +61,13 @@ a = "code_action" # Maps `ga` to show possible code actions
 "A-2" = ":sh git log"
 "C-1" = ":sh git add -u"
 "C-2" = ":sh git commit --allow-empty-message --no-edit"
-
+"X" = ["extend_line_up", "extend_to_line_bounds"]
+"x" = ["extend_line_down", "extend_to_line_bounds"]
 "C-9" = ":sh git restore --staged ."
 "C-0" = ":sh git restore ."
-"C-i" = ":sh type hello.php"
+"C-minus" = ":sh git stash"
+"C-=" = ":sh git stash pop"
+"C-S-i" = ":sh type hello.php"
 
 [editor.file-picker]
 # file picker is handy
