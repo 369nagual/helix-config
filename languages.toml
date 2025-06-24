@@ -956,19 +956,6 @@ auto-format = true
 
 
 # Debugger configuration
-# [language.debugger]
-# name = "debugpy"
-# command = "python"
-# transport = "stdio"
-# args = ["-m", "debugpy", "--listen", "0", "--wait-for-client"]
-
-# [[language.debugger.templates]]
-# name = "Python Debug"
-# request = "launch"
-# args.program = "{file}"
-
-
-
 [language.debugger]
 name = "debugpy"
 transport = "stdio"
