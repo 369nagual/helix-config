@@ -68,8 +68,10 @@ a = "code_action" # Maps `ga` to show possible code actions
 "C-minus" = ":sh git stash"
 "C-=" = ":sh git stash pop"
 "C-S-i" = ":sh type hello.php"
+"C-/" = "toggle_comments"
 "A-p" = ":sh py %{buffer_name}"
-
+# "A-r" = ":sh target\\debug\\guessing_game.exe"
+"A-r" = ":sh cargo run -q"
 [keys.normal.space]
 r = ":reload-all"
 
