@@ -952,6 +952,23 @@ formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
 
 
+# [language-server.pyright]
+# command = "pyright-langserver"
+# args = ["--stdio"]
+
+# [language-server.pyright.config]
+# reportMissingTypeStubs = false
+
+# [language-server.pyright.config.python.analysis]
+# typeCheckingMode = "basic"
+# autoImportCompletions = true
+
+# [language-server.ruff]
+# command = "ruff-lsp"
+
+# [language-server.ruff.config]
+# settings = {args = []}
+
 # Debugger configuration
 [language.debugger]
 name = "debugpy"

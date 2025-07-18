@@ -1,4 +1,4 @@
-def print_hello_world(name: str, age: int):
+def print_hello_world(name: str, age: int) -> list:
     print(f"Hello {name} what is you day at {age}?")
     return [
         {"": 1},
@@ -9,3 +9,4 @@ def print_hello_world(name: str, age: int):
 
 
 print(print_hello_world("Vitaly", 220))
+print(NameError())
