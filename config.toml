@@ -6,7 +6,7 @@ theme = "onedark"
 
 [editor]
 line-number = "relative"
-mouse = false
+mouse = true
 bufferline = "multiple"
 true-color =  true
 auto-completion = true
