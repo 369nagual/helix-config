@@ -1407,7 +1407,7 @@ name = "teal"
 scope = "source.tl"
 injection-regex = "teal"
 file-types = ["tl"]
-comment-tokens = "--"
+comment-token = "--"
 block-comment-tokens = { start = "--[[", end = "--]]" }
 roots = [ "tlconfig.lua" ]
 language-servers = [ "teal-language-server" ]

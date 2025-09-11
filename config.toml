@@ -1,12 +1,11 @@
 #  Optional Theme
-# theme = "adwaita-dark"
-# theme = "catppuccin_frappe" 
-theme = "onedark"
+theme = "solarized_dark"
+# theme = "onedark"
 
 
 [editor]
-line-number = "relative"
-mouse = true
+line-number = "absolute"
+mouse = false
 bufferline = "multiple"
 true-color =  true
 auto-completion = true
@@ -31,15 +30,13 @@ display-inlay-hints = true
 display-signature-help-docs = true
 snippets = true
 goto-reference-include-declaration = true
-display-progress-messages = true
+# display-progress-messages = true
 
 
 [editor.auto-save]
 focus-lost = true
-after-delay.enable = true
+# after-delay.enable = true
 
-[editor.inline-diagnostics]
-cursor-line = "info"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -64,12 +61,13 @@ a = "code_action" # Maps `ga` to show possible code actions
 "C-2" = ":sh git commit --allow-empty-message --no-edit"
 "X" = ["extend_line_up", "extend_to_line_bounds"]
 "x" = ["extend_line_down", "extend_to_line_bounds"]
-"C-F1" = ":sh git restore ."
-"C-F2" = ":sh git restore --staged ."
-"A-minus" = ":sh git stash"
-"A-=" = ":sh git stash pop"
+"C-9" = ":sh git restore --staged ."
+"C-0" = ":sh git restore ."
+"C-minus" = ":sh git stash"
+"C-=" = ":sh git stash pop"
+"C-S-i" = ":sh type hello.php"
 "A-p" = ":sh py %{buffer_name}"
-"A-r" = [":sh cargo run -q", ":sh .\\target\\debug\\bubble_sort.exe"]
+"A-r" = ":sh cargo run -q"
 
 [keys.normal.space]
 r = ":reload-all"
@@ -83,4 +81,3 @@ d = ":sh git diff HEAD~1"
 # file picker is handy
 hidden = false
  
-
