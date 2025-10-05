@@ -2,8 +2,28 @@
 theme = "solarized_dark"
 # theme = "onedark"
 
+[keys.normal]
+"C-o" = ":config-open"
+"A-s" = ":w"
+"A-q" = ":q"
+"C-r" = ":config-reload"
+"A-1" = ":sh git status"
+"A-2" = ":sh git log"
+"C-1" = ":sh git add -u"
+"C-2" = ":sh git commit --allow-empty-message --no-edit"
+"X" = ["extend_line_up", "extend_to_line_bounds"]
+"C-9" = ":sh git restore --staged ."
+"C-0" = ":sh git restore ."
+"C-minus" = ":sh git stash"
+"C-=" = ":sh git stash pop"
+"C-S-i" = ":sh type hello.php"
+"A-p" = ":sh py %{buffer_name}"
+"A-r" = ":sh cargo run -q"
+# "C-e" = [":sh start /wait yazi", ":redraw"]
+# "C-e" = [":sh start /wait yazelix",":redraw"]
 
 [editor]
+# load_plugins = ["yazelix"]
 line-number = "absolute"
 mouse = false
 bufferline = "multiple"
@@ -45,29 +65,11 @@ select = "underline"
 
 
 [editor.indent-guides]
-character = "╎"
+character = "|"
 render = true
 
 [keys.normal.g]
 a = "code_action" # Maps `ga` to show possible code actions
-
-[keys.normal]
-"A-s" = ":w"
-"A-q" = ":q"
-"C-r" = ":config-reload"
-"A-1" = ":sh git status"
-"A-2" = ":sh git log"
-"C-1" = ":sh git add -u"
-"C-2" = ":sh git commit --allow-empty-message --no-edit"
-"X" = ["extend_line_up", "extend_to_line_bounds"]
-"x" = ["extend_line_down", "extend_to_line_bounds"]
-"C-9" = ":sh git restore --staged ."
-"C-0" = ":sh git restore ."
-"C-minus" = ":sh git stash"
-"C-=" = ":sh git stash pop"
-"C-S-i" = ":sh type hello.php"
-"A-p" = ":sh py %{buffer_name}"
-"A-r" = ":sh cargo run -q"
 
 [keys.normal.space]
 r = ":reload-all"

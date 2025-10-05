@@ -8,5 +8,5 @@ def print_hello_world(name: str, age: int) -> list:
     ]
 
 
-print(print_hello_world("Vitaly", 220))
+print(print_hello_world("Vitaly", 22))
 print(NameError())
