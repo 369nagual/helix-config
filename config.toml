@@ -17,15 +17,12 @@ theme = "solarized_dark"
 "C-0" = ":sh git restore ."
 "C-minus" = ":sh git stash"
 "C-=" = ":sh git stash pop"
-"C-S-i" = ":sh type hello.php"
 "A-p" = ":sh py %{buffer_name}"
 "A-r" = ":sh cargo run -q"
-# "i" = ":"
 "C-e" = [":sh start /wait yazi",":redraw"]
 "C-y" = ':sh  C:\\Users\\vitka\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe https://yandex.ru/search/?text=%{selection}'
 "C-u" = ':sh  C:\\Users\\vitka\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe %{selection}'
-# "C-y" = ":sh echo %{selection}"
- 
+
 [editor]
 line-number = "absolute"
 mouse = false
