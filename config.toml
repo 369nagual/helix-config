@@ -1,4 +1,5 @@
-#  Optional Theme
+# Optional Theme
+# Helix Main Config File
 theme = "solarized_dark"
 # theme = "onedark"
 
@@ -19,14 +20,15 @@ theme = "solarized_dark"
 "C-S-i" = ":sh type hello.php"
 "A-p" = ":sh py %{buffer_name}"
 "A-r" = ":sh cargo run -q"
-# "C-e" = [":sh start /wait yazi", ":redraw"]
-# "C-e" = [":sh start /wait yazelix",":redraw"]
-
+# "i" = ":"
+"C-e" = [":sh start /wait yazi",":redraw"]
+"C-y" = ':sh  C:\\Users\\vitka\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe https://yandex.ru/search/?text=%{selection}'
+"C-u" = ':sh  C:\\Users\\vitka\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe %{selection}'
+# "C-y" = ":sh echo %{selection}"
+ 
 [editor]
-# load_plugins = ["yazelix"]
 line-number = "absolute"
 mouse = false
-bufferline = "multiple"
 true-color =  true
 auto-completion = true
 auto-pairs = true
@@ -54,8 +56,8 @@ goto-reference-include-declaration = true
 
 
 [editor.auto-save]
-focus-lost = true
-# after-delay.enable = true
+focus-lost = false
+after-delay.enable = true
 
 
 [editor.cursor-shape]

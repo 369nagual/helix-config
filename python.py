@@ -10,3 +10,4 @@ def print_hello_world(name: str, age: int) -> list:
 
 print(print_hello_world("Vitaly", 22))
 print(NameError())
+print(print_hello_world("ruff or jedi or pylsp"))
