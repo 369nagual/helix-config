@@ -166,24 +166,6 @@ paramType = true
 await = true
 
 
-[language-server.gopls]
-command = "gopls"
-
-[language-server.gopls.config.hints]
-assignVariableTypes = true
-compositeLiteralFields = true
-constantValues = true
-functionTypeParameters = true
-parameterNames = true
-rangeVariableTypes = true
-
-[language-server.golangci-lint-lsp]
-command = "golangci-lint-langserver"
-
-[language-server.golangci-lint-lsp.config]
-command = ["golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false", "--issues-exit-code=1"]
-
-
 [language-server.rust-analyzer]
 command = "rust-analyzer"
 
@@ -220,52 +202,6 @@ includeInlayParameterNameHints = "all"
 includeInlayParameterNameHintsWhenArgumentMatchesName = true
 includeInlayPropertyDeclarationTypeHints = true
 includeInlayVariableTypeHints = true
-
-[language-server.svelteserver]
-command = "svelteserver"
-args = ["--stdio"]
-
-[language-server.svelteserver.config.configuration.typescript]
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes.enabled = true
-inlayHints.enumMemberValues.enabled = true
-inlayHints.parameterNames.enabled = "all"
-
-[language-server.svelteserver.config.configuration.javascript]
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes.enabled = true
-inlayHints.enumMemberValues.enabled = true
-inlayHints.parameterNames.enabled = "all"
-
-[language-server.vscode-eslint-language-server]
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
-
-[language-server.vscode-eslint-language-server.config]
-validate = "on"
-experimental = { useFlatConfig = false }
-rulesCustomizations = []
-run = "onType"
-problems = { shortenToSingleLine = false }
-nodePath = ""
-
-[language-server.vscode-eslint-language-server.config.codeAction.disableRuleComment]
-enable = true
-location = "separateLine"
-
-[language-server.vscode-eslint-language-server.config.codeAction.showDocumentation]
-enable = true
-
-[language-server.vscode-eslint-language-server.config.workingDirectory]
-mode = "location"
-
-[language-server.clarinet]
-command = "clarinet"
-args = ["lsp"]
 
 [[language]]
 name = "rust"
@@ -325,19 +261,6 @@ args = { attachCommands = [ "platform select remote-gdb-server", "platform conne
 name = "rust"
 source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "1f63b33efee17e833e0ea29266dd3d713e27e321" }
 
-[[language]]
-name = "sway"
-scope = "source.sway"
-injection-regex = "sway"
-file-types = ["sw"]
-language-servers = [ "forc" ]
-roots = ["Forc.toml", "Forc.lock"]
-indent = { tab-width = 4, unit = "    " }
-comment-token = "//"
-
-[[grammar]]
-name = "sway"
-source = { git = "https://github.com/FuelLabs/tree-sitter-sway", rev = "e491a005ee1d310f4c138bf215afd44cfebf959c" }
 
 [[language]]
 name = "toml"
@@ -352,46 +275,6 @@ indent = { tab-width = 2, unit = "  " }
 name = "toml"
 source = { git = "https://github.com/ikatyang/tree-sitter-toml", rev = "7cff70bbcbbc62001b465603ca1ea88edd668704" }
 
-[[language]]
-name = "awk"
-scope = "source.awk"
-injection-regex = "awk"
-file-types = ["awk", "gawk", "nawk", "mawk"]
-comment-token = "#"
-language-servers = [ "awk-language-server" ]
-indent = { tab-width = 2, unit = "  " }
-
-[[grammar]]
-name = "awk"
-source = { git = "https://github.com/Beaglefoot/tree-sitter-awk", rev = "a799bc5da7c2a84bc9a06ba5f3540cf1191e4ee3" }
-
-[[language]]
-name = "protobuf"
-scope = "source.proto"
-injection-regex = "proto"
-file-types = ["proto"]
-language-servers = [ "buf", "pbkit", "protols" ]
-comment-token = "//"
-block-comment-tokens = { start = "/*", end = "*/" }
-indent = { tab-width = 2, unit = "  " }
-grammar = "proto"
-
-[[grammar]]
-name = "proto"
-source = { git = "https://github.com/sdoerner/tree-sitter-proto", rev = "778ab6ed18a7fcf82c83805a87d63376c51e80bc"}
-
-[[language]]
-name = "textproto"
-file-types = ["txtpb", "textpb", "textproto"]
-comment-token = "#"
-scope = "source.textproto"
-indent = { tab-width = 2, unit = "  " }
-formatter = { command = "txtpbfmt" }
-auto-format = true
-
-[[grammar]]
-name = "textproto"
-source = { git = "https://github.com/PorterAtGoogle/tree-sitter-textproto", rev = "568471b80fd8793d37ed01865d8c2208a9fefd1b"}
 
 [[language]]
 name = "elixir"
@@ -408,85 +291,6 @@ indent = { tab-width = 2, unit = "  " }
 name = "elixir"
 source = { git = "https://github.com/elixir-lang/tree-sitter-elixir", rev = "02a6f7fd4be28dd94ee4dd2ca19cb777053ea74e" }
 
-[[language]]
-name = "fennel"
-scope = "source.fennel"
-file-types = ["fnl", "fnlm"]
-shebangs = ["fennel"]
-comment-token = ";"
-language-servers = ["fennel-ls"]
-formatter = { command = "fnlfmt", args = ["-"]}
-indent = { tab-width = 2, unit = "  " }
-
-[[grammar]]
-name = "fennel"
-source = { git = "https://github.com/alexmozaidze/tree-sitter-fennel", rev = "cfbfa478dc2dbef267ee94ae4323d9c886f45e94" }
-
-[[language]]
-name = "fish"
-scope = "source.fish"
-injection-regex = "fish"
-file-types = ["fish"]
-shebangs = ["fish"]
-comment-token = "#"
-language-servers = ["fish-lsp"]
-indent = { tab-width = 4, unit = "    " }
-auto-format = true
-formatter = { command = "fish_indent" }
-
-[[grammar]]
-name = "fish"
-source = { git = "https://github.com/ram02z/tree-sitter-fish", rev = "a78aef9abc395c600c38a037ac779afc7e3cc9e0" }
-
-[[language]]
-name = "mint"
-scope = "source.mint"
-injection-regex = "mint"
-file-types = ["mint"]
-shebangs = []
-comment-token = "//"
-block-comment-tokens = { start = "/*", end = "*/" }
-language-servers = [ "mint" ]
-indent = { tab-width = 2, unit = "  " }
-
-[[language]]
-name = "mojo"
-scope = "source.mojo"
-roots = ["pixi.toml", "pixi.lock"]
-injection-regex = "mojo"
-file-types = ["mojo", "🔥"]
-language-servers = [ "mojo-lsp-server" ]
-comment-token = "#"
-indent = { tab-width = 4, unit = "    " }
-auto-format = true
-formatter = { command = "pixi", args = ["run", "mojo" , "format", "-q", "-"]}
-
-[[grammar]]
-name = "mojo"
-source = { git = "https://github.com/lsh/tree-sitter-mojo", rev = "3d7c53b8038f9ebbb57cd2e61296180aa5c1cf64" }
-
-[[language]]
-name = "janet"
-scope = "source.janet"
-injection-regex = "janet"
-file-types = ["cgen", "janet", "jdn"]
-shebangs = ["janet"]
-roots = ["project.janet"]
-comment-token = "#"
-indent = { tab-width = 2, unit = "  " }
-formatter = { command = "janet-format" }
-grammar = "janet-simple"
-
-[language.auto-pairs]
-'"' = '"'
-'(' = ')'
-'[' = ']'
-'{' = '}'
-"`" = "`"
-
-[[grammar]]
-name = "janet-simple"
-source = { git = "https://github.com/sogaiu/tree-sitter-janet-simple", rev = "51271e260346878e1a1aa6c506ce6a797b7c25e2" }
 
 [[language]]
 name = "json"
@@ -637,74 +441,6 @@ args = { console = "internalConsole", attachCommands = [ "platform select remote
 name = "cpp"
 source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "56455f4245baf4ea4e0881c5169de69d7edd5ae7" }
 
-[[language]]
-name = "crystal"
-scope = "source.cr"
-file-types = ["cr"]
-roots = ["shard.yml", "shard.lock"]
-comment-token = "#"
-indent = { tab-width = 2, unit = "  " }
-grammar = "ruby"
-language-servers = [ "crystalline" ]
-formatter = { command = "crystal", args = ["tool", "format", "-"] }
-
-[[language]]
-name = "c-sharp"
-scope = "source.csharp"
-injection-regex = "c-?sharp"
-file-types = ["cs", "csx", "cake"]
-roots = ["sln", "csproj"]
-comment-token = "//"
-block-comment-tokens = { start = "/*", end = "*/" }
-indent = { tab-width = 4, unit = "\t" }
-language-servers = [ "omnisharp" ]
-
-[language.debugger]
-name = "netcoredbg"
-transport = "tcp"
-command = "netcoredbg"
-args = [ "--interpreter=vscode" ]
-port-arg = "--server={}"
-
-[[language.debugger.templates]]
-name = "launch"
-request = "launch"
-completion = [ { name = "path to dll", completion = "filename" } ]
-args = { type = "coreclr", console = "internalConsole", internalConsoleOptions = "openOnSessionStart", program = "{0}" }
-
-[[language.debugger.templates]]
-name = "attach"
-request = "attach"
-completion = [ "pid" ]
-args = { processId = "{0}" }
-
-[[grammar]]
-name = "c-sharp"
-source = { git = "https://github.com/tree-sitter/tree-sitter-c-sharp", rev = "b5eb5742f6a7e9438bee22ce8026d6b927be2cd7" }
-
-[[language]]
-name = "cel"
-scope = "source.cel"
-injection-regex = "cel"
-file-types = ["cel"]
-comment-token = "//"
-indent = { tab-width = 2, unit = "  " }
-
-[[grammar]]
-name = "cel"
-source = { git = "https://github.com/bufbuild/tree-sitter-cel", rev = "9f2b65da14c216df53933748e489db0f11121464" }
-
-[[language]]
-name = "spicedb"
-scope = "source.zed"
-injection-regex = "spicedb"
-file-types = ["zed"]
-comment-token = "//"
-indent = { tab-width = 2, unit = "  " }
-
-[[grammar]]
-name = "spicedb"
-source = { git = "https://github.com/jzelinskie/tree-sitter-spicedb", rev = "a4e4645651f86d6684c15dfa9931b7841dc52a66" }
 
 [[language]]
 name = "go"
@@ -947,27 +683,31 @@ comment-token = "#"
 language-servers = ["ruff", "jedi"]
 # TODO: pyls needs utf-8 offsets
 indent = { tab-width = 4, unit = "    " }
-
-formatter = { command = "black", args = ["--quiet", "-"] }
+formatter = { command = "C:\\Users\\vitka\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\ruff.exe", args= ["format", "-"]}
 auto-format = true
+# Ruff provides the formatter via LSP
+# formatter = { command = "ruff", args= ["format", "-"]} # You can use a generic command if the LSP provides it
+# formatter = { command = "C:\Users\vitka\AppData\Local\Programs\Python\Python313\Scripts\black.exe", args = ["--quiet", "-"] }
+# formatter = { command = "black", args = ["--quiet", "-"] }
 
 
-# [language-server.pyright]
-# command = "pyright-langserver"
-# args = ["--stdio"]
+[language-server.ruff]
+# Full path to the ruff.exe in your chosen venv or global install
+command = "C:\\Users\\vitka\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\ruff.exe"
+args = ["--lsp", "--stdio"] # ruff needs the --lsp flag to run as a server
+# config = { provideFormatter = true }
 
-# [language-server.pyright.config]
-# reportMissingTypeStubs = false
+[language-server.jedi]
+# Full path to the jedi-language-server.exe
+command = "C:\\Users\\vitka\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\jedi-language-server.exe"
+args = ["--stdio"]
 
-# [language-server.pyright.config.python.analysis]
-# typeCheckingMode = "basic"
-# autoImportCompletions = true
 
 # [language-server.ruff]
 # command = "ruff-lsp"
 
 # [language-server.ruff.config]
-# settings = {args = []}
+# settings = {args = ["format"]}
 
 # Debugger configuration
 [language.debugger]
@@ -985,90 +725,6 @@ args.pythonPath = "{python}"
 [[grammar]]
 name = "python"
 source = { git = "https://github.com/tree-sitter/tree-sitter-python", rev = "4bfdd9033a2225cc95032ce77066b7aeca9e2efc" }
-
-[[language]]
-name = "nickel"
-scope = "source.nickel"
-injection-regex = "nickel"
-file-types = ["ncl"]
-shebangs = []
-comment-token = "#"
-language-servers = [ "nls" ]
-indent = { tab-width = 2, unit = "  " }
-
-[language.auto-pairs]
-'(' = ')'
-'{' = '}'
-'[' = ']'
-'"' = '"'
-
-[[grammar]]
-name = "nickel"
-source = { git = "https://github.com/nickel-lang/tree-sitter-nickel", rev = "88d836a24b3b11c8720874a1a9286b8ae838d30a" }
-
-[[language]]
-name = "nix"
-scope = "source.nix"
-injection-regex = "nix"
-file-types = ["nix"]
-shebangs = []
-comment-token = "#"
-language-servers = [ "nil", "nixd" ]
-indent = { tab-width = 2, unit = "  " }
-
-[[grammar]]
-name = "nix"
-source = { git = "https://github.com/nix-community/tree-sitter-nix", rev = "1b69cf1fa92366eefbe6863c184e5d2ece5f187d" }
-
-[[language]]
-name = "ruby"
-scope = "source.ruby"
-injection-regex = "ruby"
-file-types = [
-  "rb",
-  "rake",
-  "irb",
-  "gemspec",
-  "rabl",
-  "jbuilder",
-  "jb",
-  "podspec",
-  "rjs",
-  "rbi",
-  "rbs",
-  { glob = "rakefile" },
-  { glob = "gemfile" },
-  { glob = "Rakefile" },
-  { glob = "Gemfile" },
-  { glob = "Podfile" },
-  { glob = "Vagrantfile" },
-  { glob = "Brewfile" },
-  { glob = "Guardfile" },
-  { glob = "Capfile" },
-  { glob = "Cheffile" },
-  { glob = "Hobofile" },
-  { glob = "Appraisals" },
-  { glob = "Rantfile" },
-  { glob = "Berksfile" },
-  { glob = "Berksfile.lock" },
-  { glob = "Thorfile" },
-  { glob = "Puppetfile" },
-  { glob = "Fastfile" },
-  { glob = "Appfile" },
-  { glob = "Deliverfile" },
-  { glob = "Matchfile" },
-  { glob = "Scanfile" },
-  { glob = "Snapfile" },
-  { glob = "Gymfile" },
-]
-shebangs = ["ruby"]
-comment-token = "#"
-language-servers = [ "ruby-lsp", "solargraph" ]
-indent = { tab-width = 2, unit = "  " }
-
-[[grammar]]
-name = "ruby"
-source = { git = "https://github.com/tree-sitter/tree-sitter-ruby", rev = "206c7077164372c596ffa8eaadb9435c28941364" }
 
 [[language]]
 name = "bash"
