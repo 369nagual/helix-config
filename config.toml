@@ -5,23 +5,44 @@ theme = "solarized_dark"
 
 [keys.normal]
 "C-o" = ":config-open"
-"A-s" = ":w"
+"A-s" = [":format", ":w"]
 "A-q" = ":q"
 "C-r" = ":config-reload"
-"A-1" = ":sh git status"
-"A-2" = ":sh git log"
-"C-1" = ":sh git add -u"
-"C-2" = ":sh git commit --allow-empty-message --no-edit"
 "X" = ["extend_line_up", "extend_to_line_bounds"]
-"C-9" = ":sh git restore --staged ."
-"C-0" = ":sh git restore ."
-"C-minus" = ":sh git stash"
-"C-=" = ":sh git stash pop"
-"A-p" = ":sh py %{buffer_name}"
+"A-p" = [":w", ":format", ":sh py %{buffer_name}"]
 "A-r" = ":sh cargo run -q"
 "C-e" = [":sh start /wait yazi",":redraw"]
 "C-y" = ':sh  C:\\Users\\vitka\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe https://yandex.ru/search/?text=%{selection}'
 "C-u" = ':sh  C:\\Users\\vitka\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe %{selection}'
+"S-j" = "scroll_down"
+"S-k" = "scroll_up"
+S-tab = "move_parent_node_start"
+tab = "move_parent_node_end"
+
+[keys.insert]
+S-tab = "move_parent_node_start"
+
+[keys.select]
+tab = "move_parent_node_end"
+S-tab = "move_parent_node_start"
+
+[keys.normal.space.g]
+"s" = ":sh git status"
+"l" = ":sh git log"
+"i" = ":sh git add -u"
+"c" = ":sh git commit --allow-empty-message --no-edit"
+"minus" = ":sh git stash"
+"=" = ":sh git stash pop"
+"+" = ":sh git stash drop"
+"p" = ":sh git push -u"
+"r" = ":sh git restore --staged ."
+"R" = ":sh git restore ."
+
+[keys.normal.space]
+r = ":reload-all"
+
+[editor.smart-tab]
+supersede-menu = false
 
 [editor]
 line-number = "absolute"
@@ -31,9 +52,14 @@ auto-completion = true
 auto-pairs = true
 auto-format = true
 completion-trigger-len = 1  # Start showing completions after 1 character
+path-completion = true
+bufferline = "always"
+default-line-ending = "native"
+insert-final-newline = true
+popup-border = "none"
 
 [editor.statusline]
-left = ["mode", "spinner"]
+left = ["mode", "spinner", "version-control"]
 center = ["file-name"]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
@@ -70,9 +96,6 @@ render = true
 [keys.normal.g]
 a = "code_action" # Maps `ga` to show possible code actions
 
-[keys.normal.space]
-r = ":reload-all"
-
 [keys.normal.space.space]
 # b = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
 b = ":sh git blame %{buffer_name}"
@@ -81,4 +104,5 @@ d = ":sh git diff HEAD~1"
 [editor.file-picker]
 # file picker is handy
 hidden = false
+parents = true
  
