@@ -1,7 +1,7 @@
 # Optional Theme
 # Helix Main Config File
-# theme = "solarized_dark"
-theme = "onedark"
+theme = "solarized_dark"
+# theme = "onedark"
 
 [keys.normal]
 "C-o" = ":config-open"
@@ -16,11 +16,7 @@ theme = "onedark"
 "C-u" = ':sh  C:\\Users\\vitka\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe %{selection}'
 "S-j" = ["scroll_down", "scroll_down", "scroll_down"]
 "S-k" = ["scroll_up", "scroll_up", "scroll_up"]
-tab = "move_next_sub_word_end"
-S-tab = "move_next_sub_word_start"
-
-[keys.insert]
-S-tab = "move_parent_node_start"
+# [keys.insert]
 
 [keys.select]
 tab = "move_parent_node_end"
@@ -36,11 +32,19 @@ S-tab = "move_parent_node_start"
 "=" = ":sh git stash pop"
 "+" = ":sh git stash drop"
 "p" = ":sh git push -u"
+"P" = ":sh git pull origin main"
 "r" = ":sh git restore --staged ."
 "R" = ":sh git restore ."
 "b" = ":sh git blame %{buffer_name}"
-"d" = ":sh git diff HEAD~1"
+# "d" = ":sh git diff HEAD~1"
 # b = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
+ 
+[keys.normal.space.g.d]
+"1" = ":sh git diff HEAD~1"
+"2" = ":sh git diff HEAD~2"
+"3" = ":sh git diff HEAD~3"
+"4" = ":sh git diff HEAD~4"
+"5" = ":sh git diff HEAD~5"
 
 [keys.normal.space]
 r = ":reload-all"
